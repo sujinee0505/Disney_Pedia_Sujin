@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<!-- 빈 자동 스캔 - servlet-context.xml에서 Controller를 자동 스캔 설정해서 아래 설정에서는 Controller 
+		자동 스캔 제외 -->
+	<context:component-scan base-package="kr.spring">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 커넥션 풀을 이용한 DataSource 설정 -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="org.mariadb.jdbc.Driver" />
+
+		<!-- 서버 -->
+		<!-- <property name="url" value="jdbc:mariadb://localhost:3306/sujinee0505" /> -->
+		<!-- 로컬 -->
+		 <property name="url"
+			value="jdbc:mariadb://sujinee0505.cafe24.com:3306/sujinee0505" /> 
+		<property name="username" value="sujinee0505" />
+		<property name="password" value="merciless^^8" />
+		<property name="maxActive" value="100" />
+		<property name="maxIdle" value="30" />
+		<property name="minIdle" value="20" />
+		<property name="maxWait" value="10000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="60" />
+	</bean>
+
+	<!-- JDBC 기반 트랜잭션 관리자 설정 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+
+	<!-- 어노테이션 방식으로 처리할 때 반드시 명시함 -->
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+	<!-- mybatis 설정 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage"
+			value="kr.spring.member.vo,
+		                                           kr.spring.board.vo,
+		                                           kr.spring.contents.vo,
+		                                           kr.spring.chat.vo,
+		                                           kr.spring.calendar.vo,
+		                                           kr.spring.comment.vo" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="kr.spring.**.dao" />
+	</bean>
+
+</beans>

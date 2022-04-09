@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="contentsDetail" extends="main">
+		<put-attribute name="title" value="컨텐츠 상세 페이지" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/contents/detail.jsp" />
+	</definition>
+	<definition name="contentsSearch" extends="main">
+		<put-attribute name="title" value="검색 결과 페이지" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/contents/search.jsp" />
+	</definition>
+</tiles-definitions>
+
+

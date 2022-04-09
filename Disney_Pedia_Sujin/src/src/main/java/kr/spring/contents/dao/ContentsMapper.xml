@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.contents.dao.ContentsMapper"> 
+	<insert id="insertStar" parameterType="map" >
+		INSERT INTO dcontents_star 
+			(
+				 star_num,
+				 star,
+				 mem_num,
+				 contents_num,
+				 contents_type)
+		VALUES 
+			(
+			 <if test="checkComment == 0"> <!-- 같은 컨텐츠에 기존에 작성된 코멘트가 없을 경우 -->
+			 	dcontents_star_seq.nextval, 
+			 </if>
+			 <if test="checkComment == 1"> <!-- 같은 컨텐츠에 기존에 작성된 코멘트가 있을 경우, dcomment 테이블에 저장되어있는 star_num을 끌고와서 입력 -->
+			 	 #{starVO.star_num}, 
+			 </if>
+				 #{starVO.star},
+				 #{starVO.mem_num}, 
+				 #{starVO.contents_num},
+				 #{starVO.contents_type})
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+

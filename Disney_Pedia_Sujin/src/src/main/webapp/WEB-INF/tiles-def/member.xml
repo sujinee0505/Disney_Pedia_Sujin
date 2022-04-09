@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="memberRegister" extends="main">
+    	<put-attribute name="title" value="회원가입"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberRegister.jsp"/>
+    </definition>
+    <definition name="memberLogin" extends="main">
+    	<put-attribute name="title" value="회원로그인"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberLogin.jsp"/>
+    </definition>
+    <definition name="memberView" extends="main">
+    	<put-attribute name="title" value="MyPage"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberView.jsp"/>
+    </definition>
+    <definition name="memberModify" extends="main">
+    	<put-attribute name="title" value="회원정보수정"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberModify.jsp"/>
+    </definition>
+    <definition name="memberChangePassword" extends="main">
+    	<put-attribute name="title" value="비밀번호 변경"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberChangePassword.jsp"/>
+    </definition>
+    <definition name="memberDelete" extends="main">
+    	<put-attribute name="title" value="회원탈퇴"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberDelete.jsp"/>
+    </definition>
+     <!-- <definition name="map" extends="main">
+    	<put-attribute name="title" value="아이디체크"/>
+    	<put-attribute name="body" value="/WEB-INF/views/common/ajax_view.jsp"/>
+    </definition> -->
+    <definition name="myComent" extends="main">
+    	<put-attribute name="title" value="내코멘트목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/myComent.jsp"/>
+    </definition>
+    <definition name="myList" extends="main">
+    	<put-attribute name="title" value="내리스트목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/myList.jsp"/>
+    </definition>
+    <definition name="myContents" extends="main">
+    	<put-attribute name="title" value="컨텐츠"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/myContents.jsp"/>
+    </definition>
+    <definition name="likeComment" extends="main">
+    	<put-attribute name="title" value="좋아한코멘트목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/likeComment.jsp"/>
+    </definition>
+     <definition name="calendar" extends="main">
+    	<put-attribute name="title" value="캘린더"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/myCalendar.jsp"/>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/*등록,수정폼*/
+/* form #write_form, #update_form{
+	width:500px;
+	margin:0px auto;
+	border: none
+	padding:10px 10px 10px 30px;
+} */
+/*CKEditor 사용시 등록, 수정폼*/
+form#update_form, form#write_form {
+	width:700px;
+	margin:0px auto;
+	border: none;
+	padding:10px 10px 10px 30px;
+}
+body {
+  margin-top:75px;
+  padding-top: 75px;
+} 
+ 
+.css-1jlb6q {
+	margin: auto;
+	 width: 980px;
+     height:400px;

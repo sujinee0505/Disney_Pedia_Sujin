@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="kr.spring.chat.dao.ChattingMapper">  <!-- chatting.jsp에서 chatboard_num등을 받아왔죠?  -->
+	<select id="getChattingDetail" parameterType="map" resultType="ChattingVO"> 
+		SELECT 
+        c.chat_num,c.to_num,c.from_num,c.chatstate_num,c.content,c.chatboard_num,TO_CHAR(SEND_DATE,'YYYY/MM/DD HH24:MI') date_time,
+        m.mem_num,m.name,m.passwd,m.photo,m.photo_name
+		FROM dchatting c 
+		JOIN dmember_detail m 
+		ON c.from_num=m.mem_num 
+		WHERE chatboard_num=#{chatboard_num} 
+		AND ((from_num=#{from_num} AND to_num=#{to_num}) <!-- 내가 상대방에게 보낸 메세지  -->
+		OR (from_num=#{to_num} AND to_num=#{from_num}))<!-- 상대방이 나에게 보낸 메세지 -->
+		ORDER BY send_date ASC
+	</select>
+	
+	<select id="getChattingList" parameterType="map" resultType="ChattingVO"> 
+		SELECT 
+		 * 
+		FROM 
+			(SELECT 
+				from_num, 
+				SUM(chatstate_num) chatstate_num 
+			 FROM dchatting 
+			 WHERE chatboard_num = #{chatboard_num} AND from_num!=#{from_num} GROUP BY from_num)c 
+		JOIN dmember_detail m ON c.from_num=m.mem_num
+	</select>
+</mapper>
+

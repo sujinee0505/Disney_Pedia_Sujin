@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.spring.member.dao.MemberMapper">
+	<select id="searchUsers" parameterType="String"
+		resultType="MemberVO">
+		SELECT 
+			m.mem_num,
+			d.photo,
+			d.photo_name,
+			d.name,
+			d.introduction 
+		FROM dmember m LEFT OUTER JOIN dmember_detail d 
+		ON m.mem_num = d.mem_num
+		<if test="null != value and !''.equals(value)">
+			WHERE d.name LIKE '%' || #{name} || '%'
+		</if>
+	</select>
+</mapper>
+
+
+
+
+
+
+

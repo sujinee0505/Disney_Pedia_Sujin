@@ -1,0 +1,503 @@
+/* ==============chatBoardView============== */
+/* 상 우 하 좌/상 좌우 하/상하 좌우 */
+div#boardView {
+	/* outline:1px solid red; */
+	margin: 125px auto;
+	width: 1024px;
+	padding: 40px;
+	border-radius: 25px;
+}
+
+div#boardView h2 {
+	margin: 10px auto;
+	padding-left: 10px;
+	text-align: left;
+}
+
+div#boardView_middle {
+	/* 	outline:1px dotted red; */
+	
+}
+
+div#boardView_img {
+	/* 	outline:2px dotted green; */
+	margin-left: 2%;
+	width: 60px;
+	height: 60px;
+	margin-right: 2%;
+}
+
+div#boardView_img img {
+	/* float: left; */
+	/* margin-top:20px; */
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	/* object-position: top; */
+	border-radius: 50%;
+	/* vertical-align: middle; */
+}
+
+div#boardView_name {
+	/* outline:2px dotted yellow; */
+	/* width: 10%; */
+	font-size: 20px;
+}
+
+div#boardView_date {
+	/* margin-left:47%; */
+	font-size: 15px;
+	margin-left: 199px;
+	font-size: 15px;
+	width: 170px;
+}
+
+div#boardView_content {
+	/* outline:1px dotted green; */
+	/* height: 200px; */
+	background-color: #f7f9f9;
+	border-radius: 1%;
+	margin: 0 2%;
+	padding: 2%;
+	height: 300px;
+}
+
+div#boardView_hit {
+	/* 	outline:2px dotted yellow; */
+	margin-top: 1%;
+	margin-right: 100px;
+	text-align: left;
+	padding: 0;
+	width: 100px;
+}
+
+img#eye_img {
+	width: 30px;
+	opacity: 70%;
+}
+
+div#boardView_button {
+	margin-top: 29px;
+}
+
+button#chat_btn {
+	margin-left: 29px;
+	width: 234px;
+}
+
+button#modify_btn {
+	/* margin-left:20%; */
+	
+}
+
+button#delete_btn {
+	margin-left: 16px;
+}
+
+div#mybtn {
+	/* outline:2px dotted yellow; */
+	width: 165px;
+	margin-left: 403px;
+}
+
+button#list_btn {
+	/* margin-left:5%; */
+	width: 82px;
+}
+
+div#publicbtn {
+	/* outline:2px dotted red; */
+	width: 114px;
+}
+/*-----------채팅리스트-----------*/
+div.chatList-main {
+	margin: 95px 10% 0 10%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+div#chatList {
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 30px;
+}
+
+/* ==============chatBoardList============== */
+div#chatBoardList_main {
+	margin-top: 61.996px;
+}
+
+div.carousel-bg {
+	background: linear-gradient(332deg, black 10px, rgb(4 95 104),
+		rgb(99 84 165/ 93%) 60%, black) fixed;
+}
+
+div.carousel-item img {
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+}
+/* img#woody{filter: drop-shadow(0px -5px 10px #778699);}
+img#disney{filter: drop-shadow(0px -5px 10px #3C376E);}
+img#starwars{filter: drop-shadow(0px -5px 10px #111111);}
+img#marvel{filter: drop-shadow(0px -5px 10px #5C0100);} 
+*/
+img#woody, img#starwars {
+	filter: brightness(95%) blur(6px);
+}
+
+.carousel-item img {
+	filter: blur(6px);
+}
+
+form#list_search_form {
+	margin: 50px auto;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+div#container_table {
+	/* width: 90%; */
+	width: 1400px;
+	margin: 0 auto;
+}
+
+.row_write {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 4px;
+}
+
+ul#list_search {
+	padding-left: 0 30%;
+	text-align: center; /*li 가로정렬  */
+}
+
+ul.search li {
+	list-style: none;
+	display: inline-block; /*li 가로정렬  */
+}
+
+div#table_header {
+	padding-top: 20px;
+}
+
+div#chatBoardList1 {
+	margin-bottom: 100px;
+}
+
+table#table_header {
+	margin-bottom: 0;
+}
+
+table#table_body td {
+	height: 50px;
+}
+
+tr#chatboardList {
+	cursor: pointer;
+}
+
+#chatBoardList1 tr {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.result-display {
+	margin: 62px auto 79px;
+	width: 80%;
+	height: 300px;
+	text-align: center;
+	vertical-align: middle;
+	/* display:table-cell; */
+}
+
+.result-display div {
+	text-align: center;
+}
+
+#font01 {
+	font-size: 45px;
+}
+
+#font02 {
+	font-size: 60px;
+}
+
+table#table_body {
+	margin-top: 0px;
+}
+
+div.pagination {
+	margin-bottom: 50px;
+}
+
+ul.pagination {
+	justify-content: center;
+}
+
+li.page-link {font-size ""
+	
+}
+/* ==============Chatting============== */
+div#bg {
+	background-color: #f4fafd;
+}
+
+div.page-main-chat {
+	margin: 60px 10% 0px 10%;
+	display: flex;
+	flex-direction: row; /* 수평  */
+	justify-content: center;
+	flex-wrap: wrap;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+div#page-main-chat01 {
+	/* outline:1px solid red; */
+	display: flex;
+	/* align-items: center;  */
+	margin-right: 50px;
+}
+
+div.chat01 {
+    background-color: #eeeeee;
+    border-radius: 44px;
+    width: 382px;
+    height: 200px;
+    margin-top: 10%;
+    margin-right: 39px;
+    position: relative;
+    padding: 40px 15px 15px 36px;
+}
+
+div.chat01:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	/* left: 0; */
+	top: 15%;
+	border: 19px solid transparent;
+	border-left-color: #eeeeee;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: 34px;
+	margin-right: -13px;
+}
+
+div#trans_id {
+	font-size: 18pt;
+}
+
+div#state_notice span {
+	
+}
+
+#arrow {
+	width: 20px;
+}
+/* .item img{미키 손...읽음처리 못할듯
+width: 16px;
+outline:1px solid red;
+} */
+img#chat01img {
+	width: 91px;
+	left: -40px;
+	top: -38px;
+	position: absolute;
+}
+
+div#state_notice {
+	margin-top: 10px;
+}
+
+div#page-main-chat02 {
+	/* outline:1px solid blue; */
+	display: flex;
+	align-items: center;
+}
+
+div.chat02 {
+	/* outline: 1px solid purple; */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	padding: 10px;
+	margin: 25px 30px 25px auto;
+	border-radius: 7px;
+	min-width: 550px;
+	width: 575px;
+}
+
+div#chatting_message {
+	font-size: 14px;
+	color: #333;
+	flex-basis: 500px;
+	margin-top: 20px;
+	min-width: 550px;
+	/* flex-grow:10%; */
+}
+
+div#chatting_form {
+	/* outline:2px dotted yellow; */
+	flex-basis: 200px;
+	margin-top: 10px;
+	width: 100%;
+	/* flex-grow:10%; */
+}
+
+div#chatting_form form {
+	margin-top: 10px;
+}
+
+div#enter {
+	/* outline:2px dotted green; */
+	display: flex;
+	flex-direction: column; /* 수직  */
+	justify-content: center;
+	align-items: center;
+}
+
+div#enter img {
+	/* outline:2px dotted green; */
+	display: none;
+	position: absolute;
+	width: 120px;
+	padding-bottom: 40px;
+}
+
+div#enter textarea {
+	border-radius: 5px;
+	background-color: transparent;
+	width: 95%;
+}
+
+div#enter button {
+	margin-top: 10px;
+	width: 95%;
+}
+
+button#mate {
+	margin-top: 10px;
+	size: 10px;
+}
+/* --- 말풍선 ---- */
+
+/* 우측 .from-position */
+span#from_name {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 10px;
+}
+
+.from-position {
+	display: flex;
+	margin-right: 10px;
+	flex-direction: column;
+	align-items: flex-end;
+	padding: 5px 0;
+}
+
+.from-position .item {
+	position: relative;
+	background: #72c4df;
+	border-radius: 10px;
+	word-break: break-all;
+	padding: 14px;
+	/* margin-right: 10px; */
+	max-width: 250px;
+}
+
+#from_item:after {
+	content: '';
+	position: absolute;
+	right: 0; /* left: 0; */
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 12px solid transparent;
+	border-left-color: #72c4df; /* border-right-color */
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -6px;
+	margin-right: -10px; /* margin-left */
+}
+
+#from_item img {
+	display: none;
+}
+
+span#from_position-date, span.from_position-date {
+	/* display: none; */
+	padding: 5px 5px 0 0;
+	font-size: 8pt;
+	color: #c9c9c9;
+	font-size: 8pt;
+}
+
+div#from_item:hover {
+	
+}
+
+span#to_position-date {
+	/* display: none; */
+	padding: 5px 5px 0 0;
+	font-size: 8pt;
+	color: #c9c9c9;
+	font-size: 8pt;
+}
+
+div#to_item:hover {
+	
+}
+
+/* 좌측.to-position */
+span#to_name {
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 10px;
+}
+
+.to-position {
+	display: flex;
+	margin-left: 10px;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 5px 0;
+}
+
+.to-position .item {
+	position: relative;
+	background: #ffd891;
+	border-radius: 10px;
+	word-break: break-all;
+	padding: 14px;
+	/* margin-right: 10px; */
+	max-width: 250px;
+}
+
+#to_item:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 68%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #ffd891;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -9px;
+}
+
+.item-date {
+	color: rgb(63 113 157/ 35%);
+	font-size: 12px;
+	text-align: center;
+}

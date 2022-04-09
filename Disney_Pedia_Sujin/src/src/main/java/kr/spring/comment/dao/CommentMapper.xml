@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.comment.dao.CommentMapper"> 
+	<insert id="insertComment" parameterType="map" >
+		INSERT INTO dcomment 
+				(
+					comment_num,
+					contents_num,
+					contents_type,
+					content,
+					mem_num,
+					reg_date,
+					star_num)
+		VALUES 
+				(
+					dcomment_seq.nextval,
+					#{commentVO.contents_num},
+					#{commentVO.contents_type},
+					#{commentVO.content},
+					#{commentVO.mem_num},
+					SYSDATE,
+				<if test="star_num == 0 "> <!-- 별점이 없으면 일단 dcomment 테이블에서 임의의 star_num을 생성 → 나중에 별점을 추가할 경우 이 star_num과 연결할 용도 -->
+					dcontents_star_seq.nextval
+				</if>
+				<if test="star_num > 0 "> <!-- 이미 등록된 별점이 있으면 dcontents_star 테이블에서 가져온 star_num을 입력 -->
+					#{star_num}
+				</if>
+				)
+	</insert>
+</mapper>

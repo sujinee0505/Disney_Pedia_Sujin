@@ -43,11 +43,11 @@
 
 		</div>
 		<p>
-		<div class="alter">
+		<!-- <div class="alter">
 			계정이 없으신가요? <a href="#" data-bs-toggle="modal"
 				data-bs-target="#myModal2" class="alter_text"> 회원가입</a>
 		</div>
-		<p>
+		<p> -->
 			<!-- <div class="form-group"> -->
 	</form>
 </div>

@@ -75,11 +75,12 @@
 								class="css-fn0ezc-StylelessButton" data-bs-toggle="modal"
 								data-bs-target="#myModal">로그인</button>
 						</li>
-						<!-- 로그인 -->
-						<li class="css-bj71cw">
-							<button id="register-btn" type="button" class="css-139vxi-StylelessButton"
-								data-bs-toggle="modal" data-bs-target="#myModal2">회원가입
-							</button>
+						<!-- 회원가입 -->
+						<!-- <li class="css-bj71cw">
+							<button id="register-btn" type="button"
+								class="css-139vxi-StylelessButton" data-bs-toggle="modal"
+								data-bs-target="#myModal2">회원가입</button>
+						</li> -->
 					</c:if>
 					<c:if test="${!empty user_num && user_num !=0}">
 						<li class="css-bj71cw"><form action="logout.do"

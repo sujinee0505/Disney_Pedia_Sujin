@@ -139,7 +139,7 @@
                             <div class="css-119xxd7">
                                 <ul class="css-1ya1z7z-VisualUl">
                                     <li class="css-8y23cj">
-                                        <c:forEach var="mostLike" items="${mostLike}">
+                                        <c:forEach var="mostLike" items="${mostLike}" begin="0" end="19" step="1">
                                             <a href="${pageContext.request.contextPath}/contents/detail.do?contents_type=${mostLike.contents_type }&contents_num=${mostLike.contents_num}">
                                                 <div class="css-1qmeemv">
                                                     <div class=" css-1rdb949-StyledLazyLoadingImage ezcopuc0">
@@ -196,7 +196,7 @@
                             <div class="css-119xxd7">
                                 <ul class="css-1ya1z7z-VisualUl">
                                     <li class="css-8y23cj">
-                                        <c:forEach var="mostCommented" items="${mostCommented}">
+                                        <c:forEach var="mostCommented" items="${mostCommented}" begin="0" end="19" step="1">
                                             <a href="${pageContext.request.contextPath}/contents/detail.do?contents_type=${mostCommented.contents_type }&contents_num=${mostCommented.contents_num}">
                                                 <div class="css-1qmeemv">
                                                     <div class=" css-1rdb949-StyledLazyLoadingImage ezcopuc0">

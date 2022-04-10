@@ -14,7 +14,7 @@
 		FROM dmember m LEFT OUTER JOIN dmember_detail d 
 		ON m.mem_num = d.mem_num
 		<if test="null != value and !''.equals(value)">
-			WHERE d.name LIKE '%' || #{name} || '%'
+			WHERE d.name LIKE CONCAT('%',#{name},'%')
 		</if>
 	</select>
 </mapper>

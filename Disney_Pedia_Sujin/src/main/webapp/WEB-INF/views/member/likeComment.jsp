@@ -59,8 +59,10 @@
 								</a>
 							</div>
 							<c:if test="${cmtLikeList.star > 0 }">
-								<div class="css-yqs4x12"style="margin-top:-0.5px">
-									<div id="myPageStar">★ ${cmtLikeList.star}</div>
+								<div class="css-yqs4x12" style="margin-top: -0.5px">
+									<div id="myPageStar"
+										style="<c:if test="${memberList[status.index].mem_num != user_num }">color:#4a4a4a !important;</c:if>">★
+										${cmtLikeList.star}</div>
 								</div>
 							</c:if>
 						</div>
@@ -103,42 +105,67 @@
 								</div>
 							</a>
 							<div class="css-1atijos"
-							style="clear: both; border-top: none; border-bottom: 1px solid #e5e5e5;">
-							<div style="display: flex; align-items: center;">
-								<span
-									src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzc4Nzg3OCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02Ljc1IDkuNDg1aC0zYTEgMSAwIDAgMC0xIDF2MTBhMSAxIDAgMCAwIDEgMWgzYTEgMSAwIDAgMCAxLTF2LTEwYTEgMSAwIDAgMC0xLTFNMjAuNjU3IDguNTY2YTIuMzYzIDIuMzYzIDAgMCAwLTEuNzc5LS44MTNIMTYuNjJsLjE2NC0uNjI3Yy4xMzctLjUyOC4yMDEtMS4xMi4yMDEtMS44NjMgMC0xLjkxOS0xLjM3NS0yLjc3OC0yLjczOC0yLjc3OC0uNDQ0IDAtLjc2Ni4xMjMtLjk4Ni4zNzYtLjIuMjI3LS4yODIuNTMtLjI0My45MzVsLjAzIDEuMjMtMi45MDMgMi45NGMtLjU5My42LS44OTQgMS4yMy0uODk0IDEuODcydjkuNjQ3YS41LjUgMCAwIDAgLjUuNWg3LjY4N2EyLjM4OCAyLjM4OCAwIDAgMCAyLjM0OC0yLjA3bDEuNDQ1LTcuNDUyYTIuNDQgMi40NCAwIDAgMC0uNTc0LTEuODk3Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-									width="18px" height="18px" class="css-64x8kr"></span> <em
-									class="countLike"> <c:if
-										test="${cmtLikeList.countLike >0}">${cmtLikeList.countLike}</c:if>
-									<c:if test="${cmtLikeList.countLike ==0 }">0</c:if></em> <span
-									src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiM3ODc4NzgiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTkuODU3IDE3Ljc4Nkw2IDIxdi00LjkxYy0xLjg0MS0xLjM3My0zLTMuMzY5LTMtNS41OUMzIDYuMzU4IDcuMDMgMyAxMiAzczkgMy4zNTggOSA3LjVjMCA0LjE0Mi00LjAzIDcuNS05IDcuNS0uNzM5IDAtMS40NTYtLjA3NC0yLjE0My0uMjE0eiIvPgo8L3N2Zz4K"
-									width="18px" height="18px" class="css-q0vi8"></span><em><c:if
-										test="${cmtLikeList.countReply >0}">${cmtLikeList.countReply}</c:if>
-									<c:if test="${cmtLikeList.countReply ==0 }">0</c:if></em>
+								style="clear: both; border-top: none; border-bottom: 1px solid #e5e5e5;">
+								<div style="display: flex; align-items: center;">
+									<span
+										src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzc4Nzg3OCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02Ljc1IDkuNDg1aC0zYTEgMSAwIDAgMC0xIDF2MTBhMSAxIDAgMCAwIDEgMWgzYTEgMSAwIDAgMCAxLTF2LTEwYTEgMSAwIDAgMC0xLTFNMjAuNjU3IDguNTY2YTIuMzYzIDIuMzYzIDAgMCAwLTEuNzc5LS44MTNIMTYuNjJsLjE2NC0uNjI3Yy4xMzctLjUyOC4yMDEtMS4xMi4yMDEtMS44NjMgMC0xLjkxOS0xLjM3NS0yLjc3OC0yLjczOC0yLjc3OC0uNDQ0IDAtLjc2Ni4xMjMtLjk4Ni4zNzYtLjIuMjI3LS4yODIuNTMtLjI0My45MzVsLjAzIDEuMjMtMi45MDMgMi45NGMtLjU5My42LS44OTQgMS4yMy0uODk0IDEuODcydjkuNjQ3YS41LjUgMCAwIDAgLjUuNWg3LjY4N2EyLjM4OCAyLjM4OCAwIDAgMCAyLjM0OC0yLjA3bDEuNDQ1LTcuNDUyYTIuNDQgMi40NCAwIDAgMC0uNTc0LTEuODk3Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
+										width="18px" height="18px" class="css-64x8kr"></span> <em
+										class="countLike"> <c:if
+											test="${cmtLikeList.countLike >0}">${cmtLikeList.countLike}</c:if>
+										<c:if test="${cmtLikeList.countLike ==0 }">0</c:if></em> <span
+										src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiM3ODc4NzgiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTkuODU3IDE3Ljc4Nkw2IDIxdi00LjkxYy0xLjg0MS0xLjM3My0zLTMuMzY5LTMtNS41OUMzIDYuMzU4IDcuMDMgMyAxMiAzczkgMy4zNTggOSA3LjVjMCA0LjE0Mi00LjAzIDcuNS05IDcuNS0uNzM5IDAtMS40NTYtLjA3NC0yLjE0My0uMjE0eiIvPgo8L3N2Zz4K"
+										width="18px" height="18px" class="css-q0vi8"></span><em><c:if
+											test="${cmtLikeList.countReply >0}">${cmtLikeList.countReply}</c:if>
+										<c:if test="${cmtLikeList.countReply ==0 }">0</c:if></em>
+								</div>
 							</div>
-						</div>
-						</div>
-						<c:if test="${param.mem_num == user_num }">
-							<div class="css-hy68ty">
-								<input type="hidden" value="${cmtLikeList.comment_num}"
-									class="comment_num"> <input type="hidden" value="1"
-									class="checkCmtLike">
-								<button
-									class="css-jj4q3s-StylelessButton-UserActionButton cmtLike"
-									style="margin-left: 5px; font-size: 13px;">&nbsp;좋아요&nbsp;</button>
-							</div>
-						</c:if>
-						<c:if test="${param.mem_num != user_num }">
-							<div class="css-hy68ty">
-								<input type="hidden" value="${cmtLikeList.comment_num}"
-									class="comment_num"> <input type="hidden"
-									value="${checkCmtLike[status.index]}" class="checkCmtLike">
-								<button
-									class="<c:if test="${checkCmtLike[status.index] == 1}">css-jj4q3s-StylelessButton-UserActionButton cmtLike</c:if>
+							<c:if
+								test="${!empty user_num && memberList[status.index].mem_num != user_num}">
+								<c:if test="${param.mem_num == user_num }">
+									<div class="css-hy68ty">
+										<input type="hidden" value="${cmtLikeList.comment_num}"
+											class="comment_num"> <input type="hidden" value="1"
+											class="checkCmtLike">
+										<button
+											class="css-jj4q3s-StylelessButton-UserActionButton cmtLike"
+											style="margin-left: 5px; font-size: 13px;">&nbsp;좋아요&nbsp;</button>
+									</div>
+								</c:if>
+								<c:if test="${param.mem_num != user_num }">
+									<div class="css-hy68ty">
+										<input type="hidden" value="${cmtLikeList.comment_num}"
+											class="comment_num"> <input type="hidden"
+											value="${checkCmtLike[status.index]}" class="checkCmtLike">
+										<button
+											class="<c:if test="${checkCmtLike[status.index] == 1}">css-jj4q3s-StylelessButton-UserActionButton cmtLike</c:if>
 																			<c:if test="${checkCmtLike[status.index] == 0}">css-1h18l7j-StylelessButton cmtLike</c:if>
 																			<c:if test="${empty user_num || user_num  == 0}">css-1h18l7j-StylelessButton cmtLike</c:if>"
-									style="margin-left: 5px; font-size: 13px;">&nbsp;좋아요&nbsp;</button>
+											style="margin-left: 5px; font-size: 13px;">&nbsp;좋아요&nbsp;</button>
 
+									</div>
+								</c:if>
+							</c:if>
+						</div>
+						<c:if
+							test="${!empty user_num && memberList[status.index].mem_num == user_num}">
+							<div class="css-hy68ty"
+								style="display: flex; justify-content: flex-end;">
+								<button data-bs-target="#commentUpdateModal"
+									data-bs-toggle="modal"
+									class="css-jj4q3s-StylelessButton-UserActionButton updateBtn"
+									style="margin-right: 5px; font-size: 13px;">
+									&nbsp;&nbsp;수정&nbsp;&nbsp;</button>
+								<input type="hidden" value="${commentList.contents_type }"
+									class="contents_type"> <input type="hidden"
+									value="${commentList.contents_num }" class="contents_num">
+								<input type="hidden" value="${contentsList[status.index].title}"
+									class="contents_title"> <input type="hidden"
+									value="${commentList.content}" class="reply_content"> <input
+									type="hidden" value="0" class="status">
+								<button
+									class="css-jj4q3s-StylelessButton-UserActionButton cmt_delbtn"
+									style="font-size: 13px; background-color: #a8a8a8;">
+									&nbsp;&nbsp;삭제&nbsp;&nbsp;</button>
 							</div>
 						</c:if>
 					</div>

@@ -224,24 +224,6 @@ $(function() {
         $calBody.innerHTML = trtd;
     }
 
-    function createNewList(val) {
-        let id = new Date().getTime() + '';
-        let yy = init.activeDate.getFullYear();
-        let mm = init.activeDate.getMonth() + 1;
-        let dd = init.activeDate.getDate();
-        const $target = $calBody.querySelector(`.day[data-date="${dd}"]`);
-
-        let date = yy + '.' + init.addZero(mm) + '.' + init.addZero(dd);
-
-        let eventData = {};
-        eventData['date'] = date;
-        eventData['memo'] = val;
-        eventData['complete'] = false;
-        eventData['id'] = id;
-        init.event.push(eventData);
-        $todoList.appendChild(createLi(id, val, date));
-    }
-
     loadYYMM(init.today);
     loadDate(init.today.getDate(), init.today.getDay());
 

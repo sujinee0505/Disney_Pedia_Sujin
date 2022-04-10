@@ -1,5 +1,7 @@
 # 디즈니 피디아
-Spring FrameWork를 사용한 왓챠피디아 클론 코딩 프로젝트
+TMDB API를 사용한 왓챠피디아 클론 코딩 프로젝트
+</br>
+실제 구현 페이지 : <a href="http://disney-pedia.shop/">디즈니 피디아</a>에서 확인 가능
 </br>
 </br>
 <hr>

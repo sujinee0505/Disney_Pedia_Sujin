@@ -204,7 +204,7 @@ countChatMember(); //페이지에서 항상 채팅카운트 후 배지알림
 
 		<!-- 1-2. 글 작성자와 로그인 되어있는 유저 같은 경우 -->
 		<div id="mybtn">
-			<c:if test="${!empty user_num && user_num == chatboard.mem_num}">
+			<c:if test="${user_auth != 3 && !empty user_num && user_num == chatboard.mem_num}">
 				<button class="btn btn-secondary" id="modify_btn"
 					onclick="location.href='update.do?chatboard_num=${chatboard.chatboard_num}'">수정</button>
 				<button class="btn btn-secondary" id="delete_btn">삭제</button>

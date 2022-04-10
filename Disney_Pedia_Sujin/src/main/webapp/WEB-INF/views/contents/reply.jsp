@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script type="text/javascript">
 $(function() {
     //커서
@@ -81,7 +82,7 @@ $(function() {
               <div id="count_area">
                   <span class="letter-count">0/300</span>
               </div>
-              <button type="button" id="comment_btn" class="btn btn-dark-blue" onclick="cmt_submit()">등록</button>
+              <button type="button" id="comment_btn" class="btn btn-dark-blue" onclick="cmt_submit()" <c:if test="${user_auth == 3 }">disabled</c:if>>등록</button>
           </div>
       </form>
   </div>

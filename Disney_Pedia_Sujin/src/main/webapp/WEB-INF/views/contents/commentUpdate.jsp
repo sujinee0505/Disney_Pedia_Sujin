@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script type="text/javascript">
 $(function() {
 
@@ -118,31 +119,38 @@ $(function() {
 
 });
 </script>
-    <!-- Modal Header -->
-    <div class="modal-header border-0" id="comment-header">
-        <p class="modal-title2"><b>${contents.title }</b></p>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-    </div>
-    <!-- Modal body -->
-    <div class="modal-body comment-body">
-        <form action="" method="post" role="form" id="commentUpdate_form">
-            <input type="hidden" value="${contents.contents_num}" id="contents_num">
-            <input type="hidden" value="${contents.contents_type}" id="contents_type">
-            <input type="hidden" value=${getComment.star_num } id="starnum_comment">
-            <textarea autofocus required cols="30" rows="10" id="comment2" name="comment" placeholder="이 작품에 대한 생각을 자유롭게 표현해주세요." spellcheck="false">${getComment.content }</textarea>
-            <div class="float_right">
-                <!-- 글자수 체크 -->
-                <div id="count_area">
-                    <span class="letter-count">0/1000</span>
-                </div>
-                <!-- 삭제 아이콘 -->
-                <a>
-                    <img src="${pageContext.request.contextPath}/resources/images/trash.png" 
-                    onclick="cmtDel()"
-                    id="cmt_delbtn">
-                </a>
-                <button type="button" onclick="cmtUpdate()" id="comment_btn" class="btn btn-dark-blue">수정</button>
+<!-- Modal Header -->
+<div class="modal-header border-0" id="comment-header">
+	<p class="modal-title2">
+		<b>${contents.title }</b>
+	</p>
+	<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<!-- Modal body -->
+<div class="modal-body comment-body">
+	<form action="" method="post" role="form" id="commentUpdate_form">
+		<input type="hidden" value="${contents.contents_num}"
+			id="contents_num"> <input type="hidden"
+			value="${contents.contents_type}" id="contents_type"> <input
+			type="hidden" value=${getComment.star_num } id="starnum_comment">
+		<textarea autofocus required cols="30" rows="10" id="comment2"
+			name="comment" placeholder="이 작품에 대한 생각을 자유롭게 표현해주세요."
+			spellcheck="false">${getComment.content }</textarea>
+		<div class="float_right">
+			<!-- 글자수 체크 -->
+			<div id="count_area">
+				<span class="letter-count">0/1000</span>
+			</div>
+			<!-- 삭제 아이콘 -->
+			<a> <img
+				src="${pageContext.request.contextPath}/resources/images/trash.png"
+				<c:if test="${user_auth != 3 }">onclick="cmtDel()"</c:if>
+				<c:if test="${user_auth == 3 }">href="#"</c:if> id="cmt_delbtn">
+			</a>
+			<button onclick="cmtUpdate()" id="comment_btn"
+				class="btn btn-dark-blue"
+				<c:if test="${user_auth == 3 }">disabled</c:if>>수정</button>
 
-            </div>
-        </form>
-    </div>
+		</div>
+	</form>
+</div>

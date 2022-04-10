@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script type="text/javascript">
   $(function() {
 	  //커서
@@ -105,7 +106,7 @@
 			<div id="count_area">
 			<span class="letter-count">0/1000</span>
 			</div> 
-			<button type="button" id="comment_btn" onclick="cmtSubmit()" class="btn btn-dark-blue">저장</button>			
+			<button id="comment_btn" onclick="cmtSubmit()" class="btn btn-dark-blue" <c:if test="${user_auth == 3 }">disabled</c:if>>저장</button>			
 			<!-- btn-hover color-9 -->
 		</div>
 		</form> 		

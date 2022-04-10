@@ -10,9 +10,6 @@
 }
 </style>
 <script type="text/javascript">
-
-
-
 let namecount = 0;
    $(function(){
 	let chatboard_num = $('#chatboard_num').val();
@@ -291,7 +288,7 @@ let namecount = 0;
 							<div id="enter" >
 								<img src="${pageContext.request.contextPath}/resources/images/board/chipNdale.gif">
 								<textarea name="content" id="content" class="form-control no_resize" cols="70" rows="5" ></textarea>
-								<button type="submit" class="btn-chat btn-outline-primary rounded-pill" id="submit_btn">전송</button>
+								<button type="submit" class="btn-chat btn-outline-primary rounded-pill" id="submit_btn" <c:if test="${user_auth == 3 }">disabled</c:if>>전송</button>
 							</div>
 						</form>
 					</div>

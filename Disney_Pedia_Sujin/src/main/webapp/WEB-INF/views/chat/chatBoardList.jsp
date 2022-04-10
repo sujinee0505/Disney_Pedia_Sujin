@@ -155,7 +155,7 @@ $(function() {
 			<!-- ======글쓰기버튼====== -->
 			<div id="sort02">
 				<button class="btn btn-primary" id="write_btn"
-					onclick="location.href='write.do'" style="<c:if test="${empty user_num || user_num == 0}">display : none;</c:if>">
+					onclick="location.href='write.do'" style="<c:if test="${user_auth == 3 || empty user_num || user_num == 0}">display : none;</c:if>">
 					게시글 작성
 				</button> 
 			</div>
